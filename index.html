@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JobBoard V2</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><a class="brand" href="#"><b>J</b> JobBoard</a><nav><a href="#jobs">Find jobs</a><button id="adminToggle" class="outline">Admin dashboard</button></nav></header>
+<main class="wrap">
+<section class="hero"><p class="eyebrow">YOUR NEXT OPPORTUNITY STARTS HERE</p><h1>Find work that<br><span>moves you forward.</span></h1><p>Search opportunities, explore job details and manage demo listings.</p></section>
+<section class="filters">
+<label>Search jobs<input id="search" type="search" placeholder="e.g. Sales Executive"></label>
+<label>Location<select id="location"><option value="">All locations</option></select></label>
+<label>Category<select id="category"><option value="">All categories</option></select></label>
+<button id="clear" class="soft">Clear</button></section>
+<section id="admin" class="panel" hidden><div class="sectionhead"><div><p class="eyebrow">LOCAL DEMO CONTROLS</p><h2 id="formTitle">Add a job</h2></div><button id="closeAdmin" class="outline">Close</button></div>
+<p class="warning"><b>Demo limitation:</b> Admin changes are stored only in this browser. They do not sync to GitHub Pages or other visitors. This demo has no login or server-side security.</p>
+<form id="jobForm" class="form">
+<input id="editId" type="hidden">
+<label>Job title *<input id="title" required maxlength="80"></label><label>Company *<input id="company" required maxlength="80"></label><label>Location *<input id="city" required maxlength="60"></label><label>Category *<input id="cat" required maxlength="50"></label>
+<label>Job type *<select id="type"><option>Full-time</option><option>Part-time</option><option>Internship</option><option>Trainee</option><option>Contract</option></select></label><label>Salary<input id="salary" maxlength="50" placeholder="₹15,000–₹20,000"></label>
+<label class="wide">Description *<textarea id="desc" required maxlength="1200" rows="3"></textarea></label>
+<div class="wide actions"><button class="primary" type="submit" id="save">Save job</button><button type="button" id="resetForm" class="soft">Reset form</button><button type="button" id="restore" class="outline">Restore sample data</button></div></form>
+<h3>Manage listings <small id="adminCount"></small></h3><div id="adminList" class="adminlist"></div></section>
+<section id="jobs"><div class="sectionhead"><div><p class="eyebrow">OPPORTUNITIES</p><h2>Latest jobs</h2></div><small id="count"></small></div><div id="jobList" class="grid"></div></section>
+<p class="warning"> <b>Sample data:</b> Initial companies and listings are fictional examples, not real vacancies. Verify employers before publishing real listings.</p></main>
+<dialog id="details"><div class="dialoghead"><span id="detailCat" class="tag"></span><button id="x" class="outline">×</button></div><p id="detailCompany" class="muted"></p><h2 id="detailTitle"></h2><p id="detailMeta" class="muted"></p><h3>About this role</h3><p id="detailDesc"></p><div class="actions"><button id="apply" class="primary">Apply now</button><button id="closeDetails" class="soft">Close</button></div><small class="muted">Demo only: no application is submitted or stored.</small></dialog>
+<footer>JobBoard learning project · <a href="https://github.com/asif87986-hash/jobboard-website">View source on GitHub</a></footer><div id="toast" role="status"></div><script src="script.js"></script></body></html>
